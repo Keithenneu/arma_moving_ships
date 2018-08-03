@@ -9,7 +9,7 @@ respawn		= 3;
 respawnTemplates[] = {};
 respawnDelay	= 3;
 respawnDialog	= 0;
-respawnOnStart	= 1;
+respawnOnStart	= 0;
 
 author="Keithen";			
 
