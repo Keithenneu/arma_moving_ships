@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=71;
+		nextID=74;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14865.03,116.59266,15832.504};
-		dir[]={0.063992709,-0.48557845,-0.87197423};
-		up[]={0.035548382,0.87415093,-0.48435029};
-		aside[]={-0.99741781,1.0507065e-006,-0.073197156};
+		pos[]={15147.73,75.084137,15498.582};
+		dir[]={-0.32771423,-0.49170059,0.80688733};
+		up[]={-0.18505394,0.870718,0.45562452};
+		aside[]={0.92659658,1.4125835e-006,0.37633371};
 	};
 };
 binarizationWanted=0;
@@ -32,13 +32,14 @@ addons[]=
 	"A3_Characters_F_Jets",
 	"A3_Air_F_Jets_Plane_Fighter_01",
 	"A3_Air_F_Beta_Heli_Transport_01",
-	"A3_Air_F_Heli_Light_01"
+	"A3_Air_F_Heli_Light_01",
+	"A3_Structures_F_EPC_Dominants_GhostHotel"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=10;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -102,6 +103,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item9
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=1612882;
@@ -133,7 +141,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=11;
+		items=14;
 		class Item0
 		{
 			dataType="Marker";
@@ -231,7 +239,7 @@ class Mission
 			};
 			id=59;
 			type="Land_Pier_addon";
-			atlOffset=40.265469;
+			atlOffset=40.265396;
 		};
 		class Item6
 		{
@@ -263,7 +271,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={15104.46,20.693165,15615.499};
-						angles[]={-0,4.6021929,0};
+						angles[]={0,4.6021929,0};
 					};
 					side="West";
 					flags=6;
@@ -330,6 +338,55 @@ class Mission
 			id=70;
 			type="B_Heli_Light_01_F";
 			atlOffset=0.011854172;
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15199.135,-2.8478339,15689.036};
+				angles[]={0,1.4530698,0.37609386};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="carrier_2";
+			};
+			id=71;
+			type="Land_Carrier_01_base_F";
+			atlOffset=12.497146;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15184.844,19.844521,15641.212};
+				angles[]={0.24927312,0,6.2086568};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=72;
+			type="Land_GH_Platform_F";
+			atlOffset=39.688934;
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15185.207,17.999184,15647.693};
+				angles[]={0.29796162,0,6.2086568};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=73;
+			type="Land_GH_Platform_F";
+			atlOffset=0.97348022;
 		};
 	};
 };

@@ -61,6 +61,7 @@ bso_carrier_pfh =
 	[_ship, _velocity, [180-_a+_xyaw, _xpitch, _xbank]] call bso_update_pos;
 
 	if (vehicle player == player) then {
+		// TODO: do some check if actually on the boat
 		if (player distance _ship < 400) then // && isTouchingGround vehicle player) then
 		{
 			player setPosASL (_ship modelToWorldVisualWorld _rel_pos);
@@ -70,33 +71,34 @@ bso_carrier_pfh =
 	}
 	else
 	{
-		// do things and stuff
+		if (vehicle player distance _ship < 400 && !(vehicle player getVariable ["epe_added", false])) then {
+			vehicle player addEventHandler ["EpeContact", epe_proxy];
+			vehicle player addEventHandler ["EpeContactEnd", epe_proxy];
+			vehicle player addEventHandler ["EpeContactStart", epe_proxy];
+			vehicle player setVariable ["epe_added", true];
+		} else {
+			// remove them
+		};
 	};
 };
 
 [{_this call bso_both_ships}] call CBA_fnc_addPerFrameHandler;
 
-player addAction ["TP Pad", {player setposasl (destroyer modelToWorldWorld [0,75,8.75])}];
-player addAction ["TP Bridge", {player setposasl (destroyer modelToWorldWorld [0,-36,19.5])}];
-player addAction ["TP Deck", {player setposasl (carrier modelToWorldWorld [0,0,22.5])}];
-
-// TODO: find better method. determince stuff dynamically
-private _handler = {
-	private _obj = _this select 1;
-	if (_obj in bso_epe_parts) then {
-		private _force = (_this select 4) / 10;
-		_force = (0 max _force) min 1;
-		private _v_pad = velocity _obj;
-		private _v_helo = velocity helo;
-		private _v_res = _v_helo vectorMultiply (1 - _force) vectorAdd (_v_pad vectorMultiply _force);
-		helo setVelocity _v_res;
-	};
+epe_proxy = {
+	_this call epe_handler;
 };
 
-//helo addEventHandler ["EpeContact", _handler];
-//helo addEventHandler ["EpeContactEnd", _handler];
-//helo addEventHandler ["EpeContactStart", _handler];
-
-
-//helo addEventHandler ["HandleDamage", {systemChat format ["handledamage: %1", _this]}];
-
+// TODO: find better way of doing it
+epe_handler = {
+	params ["_helo", "_obj"];
+	private _force = _this select 4;
+	if (_obj in bso_epe_parts) then {
+		private _force = (_this select 4) / (getMass _helo / 200); // idle force is roughly weight / 200
+		_force = (0 max _force) min 1;
+		hintSilent str _force;
+		private _v_pad = velocity _obj;
+		private _v_helo = velocity _helo;
+		private _v_res = _v_helo vectorMultiply (1 - _force) vectorAdd (_v_pad vectorMultiply _force);
+		_helo setVelocity _v_res;
+	};
+};
