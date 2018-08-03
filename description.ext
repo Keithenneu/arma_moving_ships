@@ -1,0 +1,20 @@
+DisabledAI		= 1;
+joinUnassigned		= 1;
+enableDebugConsole	= 1;
+showGPS			= 1;
+showCompass		= 1;
+showWatch		= 1;
+
+respawn		= 3;
+respawnTemplates[] = {};
+respawnDelay	= 3;
+respawnDialog	= 0;
+respawnOnStart	= 0;
+
+author="Keithen";			
+
+class Header {
+	maxPlayers = 1;
+	minPlayers = 1;
+	gameType = TEST;
+};

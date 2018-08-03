@@ -1,0 +1,336 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=513;
+	class ItemIDProvider
+	{
+		nextID=71;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={14865.03,116.59266,15832.504};
+		dir[]={0.063992709,-0.48557845,-0.87197423};
+		up[]={0.035548382,0.87415093,-0.48435029};
+		aside[]={-0.99741781,1.0507065e-006,-0.073197156};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Ui_F",
+	"A3_Boat_F_Jets_Carrier_01",
+	"A3_Boat_F_Destroyer_Destroyer_01",
+	"A3_Structures_F_Naval_Piers",
+	"A3_Characters_F_Jets",
+	"A3_Air_F_Jets_Plane_Fighter_01",
+	"A3_Air_F_Beta_Heli_Transport_01",
+	"A3_Air_F_Heli_Light_01",
+	"ace_realisticnames"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=9;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Boat_F_Jets";
+			name="Arma 3 Jets - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Boat_F_Destroyer";
+			name="Arma 3 Jets - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Characters_F_Jets";
+			name="Arma 3 Jets - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Air_F_Jets";
+			name="Arma 3 Jets - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item6
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=1612882;
+class ScenarioData
+{
+	author="Keithen";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=11;
+		class Item0
+		{
+			dataType="Marker";
+			position[]={15252.389,0,14172.523};
+			name="center";
+			markerType="ELLIPSE";
+			type="ellipse";
+			fillName="Border";
+			a=1300;
+			b=1300;
+			drawBorder=1;
+			id=0;
+			atlOffset=71.01664;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13425.485,9.5367432e-005,12819.085};
+				angles[]={0,3.6994174,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="carrier";
+			};
+			id=1;
+			type="Land_Carrier_01_base_F";
+			atlOffset=20.777;
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13532.234,0.00044250488,12681.77};
+				angles[]={0,3.7969987,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="destroyer";
+			};
+			id=2;
+			type="Land_Destroyer_01_base_F";
+			atlOffset=24.330999;
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15034.693,-2.8367205,15577.688};
+				angles[]={0,1.4530698,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="carrier_1";
+			};
+			id=55;
+			type="Land_Carrier_01_base_F";
+			atlOffset=27.312653;
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15031.202,-0.36860001,15639.474};
+				angles[]={0,1.3897055,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="destroyer_1";
+			};
+			id=56;
+			type="Land_Destroyer_01_base_F";
+			atlOffset=11.856356;
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15105.813,18.341244,15635.363};
+				angles[]={0,4.5519762,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=59;
+			type="Land_Pier_addon";
+			atlOffset=40.265469;
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15110.503,12.079397,15645.934};
+				angles[]={0,6.0506067,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=60;
+			type="Land_Pier_addon";
+			atlOffset=0.44313908;
+		};
+		class Item7
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15104.46,20.693165,15615.499};
+						angles[]={-0,4.6021929,0};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=63;
+					type="B_Fighter_Pilot_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=61;
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15116.296,23.200956,15550.172};
+				angles[]={0.00048828125,4.6021929,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=62;
+			type="B_Plane_Fighter_01_F";
+			atlOffset=0.016799927;
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15112.479,22.83831,15565.168};
+				angles[]={0.00048828125,4.6839762,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=65;
+			type="B_Heli_Transport_01_F";
+			atlOffset=0.041547775;
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15109.294,22.471375,15579.344};
+				angles[]={0.00048828125,4.5765324,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=70;
+			type="B_Heli_Light_01_F";
+			atlOffset=0.011854172;
+		};
+	};
+};
