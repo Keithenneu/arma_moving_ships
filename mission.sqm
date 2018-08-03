@@ -32,8 +32,7 @@ addons[]=
 	"A3_Characters_F_Jets",
 	"A3_Air_F_Jets_Plane_Fighter_01",
 	"A3_Air_F_Beta_Heli_Transport_01",
-	"A3_Air_F_Heli_Light_01",
-	"ace_realisticnames"
+	"A3_Air_F_Heli_Light_01"
 };
 class AddonsMetaData
 {
