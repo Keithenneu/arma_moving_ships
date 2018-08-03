@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=74;
+		nextID=79;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15147.73,75.084137,15498.582};
-		dir[]={-0.32771423,-0.49170059,0.80688733};
-		up[]={-0.18505394,0.870718,0.45562452};
-		aside[]={0.92659658,1.4125835e-006,0.37633371};
+		pos[]={14492.855,280.63461,15664.469};
+		dir[]={0.93496054,-0.35485333,0.013007168};
+		up[]={0.35491881,0.93487436,0.0049406923};
+		aside[]={0.013910181,1.0238282e-006,-1.0000069};
 	};
 };
 binarizationWanted=0;
@@ -28,7 +28,6 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Boat_F_Jets_Carrier_01",
 	"A3_Boat_F_Destroyer_Destroyer_01",
-	"A3_Structures_F_Naval_Piers",
 	"A3_Characters_F_Jets",
 	"A3_Air_F_Jets_Plane_Fighter_01",
 	"A3_Air_F_Beta_Heli_Transport_01",
@@ -39,7 +38,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=9;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -63,47 +62,40 @@ class AddonsMetaData
 		};
 		class Item3
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item4
-		{
 			className="A3_Characters_F_Jets";
 			name="Arma 3 Jets - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item4
 		{
 			className="A3_Air_F_Jets";
 			name="Arma 3 Jets - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item5
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item6
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item7
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item8
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
@@ -226,40 +218,6 @@ class Mission
 		};
 		class Item5
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15105.813,18.341244,15635.363};
-				angles[]={0,4.5519762,0};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-			};
-			id=59;
-			type="Land_Pier_addon";
-			atlOffset=40.265396;
-		};
-		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15110.503,12.079397,15645.934};
-				angles[]={0,6.0506067,0};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-			};
-			id=60;
-			type="Land_Pier_addon";
-			atlOffset=0.44313908;
-		};
-		class Item7
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -270,8 +228,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15104.46,20.693165,15615.499};
-						angles[]={0,4.6021929,0};
+						position[]={15111.704,20.693165,15622.867};
+						angles[]={-0,4.6021929,0};
 					};
 					side="West";
 					flags=6;
@@ -288,12 +246,12 @@ class Mission
 			};
 			id=61;
 		};
-		class Item8
+		class Item6
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15116.296,23.200956,15550.172};
+				position[]={15091.521,23.177313,15563.261};
 				angles[]={0.00048828125,4.6021929,0};
 			};
 			side="Empty";
@@ -303,32 +261,31 @@ class Mission
 			};
 			id=62;
 			type="B_Plane_Fighter_01_F";
-			atlOffset=0.016799927;
+			atlOffset=0.041313171;
 		};
-		class Item9
+		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15112.479,22.83831,15565.168};
-				angles[]={0.00048828125,4.6839762,0};
+				position[]={15104.521,22.790068,15605.013};
+				angles[]={-0,0.73128182,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=65;
 			type="B_Heli_Transport_01_F";
-			atlOffset=0.041547775;
+			atlOffset=46.018036;
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15109.294,22.471375,15579.344};
-				angles[]={0.00048828125,4.5765324,0};
+				position[]={15100.406,22.4596,15617.617};
+				angles[]={-0,0.73014438,0};
 			};
 			side="Empty";
 			flags=4;
@@ -337,15 +294,15 @@ class Mission
 			};
 			id=70;
 			type="B_Heli_Light_01_F";
-			atlOffset=0.011854172;
+			atlOffset=2.6702881e-005;
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15199.135,-2.8478339,15689.036};
-				angles[]={0,1.4530698,0.37609386};
+				position[]={15143.916,-9.0133944,15725.016};
+				angles[]={0,6.0911469,0.20840615};
 			};
 			side="Empty";
 			class Attributes
@@ -354,39 +311,69 @@ class Mission
 			};
 			id=71;
 			type="Land_Carrier_01_base_F";
-			atlOffset=12.497146;
+			atlOffset=0.61385155;
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15109.622,18.223166,15632.932};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=75;
+			type="Land_GH_Stairs_F";
+			atlOffset=42.003769;
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15109.623,13.605927,15639.433};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=76;
+			type="Land_GH_Stairs_F";
+			atlOffset=36.422226;
 		};
 		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15184.844,19.844521,15641.212};
-				angles[]={0.24927312,0,6.2086568};
+				position[]={15109.583,8.6128483,15646.773};
 			};
 			side="Empty";
 			class Attributes
 			{
 			};
-			id=72;
-			type="Land_GH_Platform_F";
-			atlOffset=39.688934;
+			id=77;
+			type="Land_GH_Stairs_F";
+			atlOffset=0.99439144;
 		};
 		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15185.207,17.999184,15647.693};
-				angles[]={0.29796162,0,6.2086568};
+				position[]={13323.995,4.4208775,12905.346};
+				angles[]={0,3.6994174,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				name="carrier_straight";
 			};
-			id=73;
-			type="Land_GH_Platform_F";
-			atlOffset=0.97348022;
+			id=78;
+			type="Land_Carrier_01_base_F";
+			atlOffset=20.777;
 		};
 	};
 };

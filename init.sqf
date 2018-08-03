@@ -7,7 +7,7 @@ bso_epe_parts = [];
 	{
 		bso_epe_parts pushBack (_x select 0);
 	} forEach (_vehicle getVariable ["bis_carrierParts", []]);
-} forEach [destroyer, carrier];
+} forEach [destroyer, carrier, carrier_straight];
 
 bso_update_pos = {
 	params ["_carrierBase", "_velocity", "_rotation"];
@@ -33,6 +33,37 @@ bso_update_pos = {
 bso_both_ships = {
 	[carrier, 0] call bso_carrier_pfh;
 	[destroyer, 180] call bso_carrier_pfh;
+	[carrier_straight] call straight_carrier_pfh;
+};
+
+straight_carrier_pfh = {
+	params ["_ship"];
+	private _rel_pos = _ship worldToModelVisual getPosASLW vehicle player;
+	private _tt = 817;
+	private _t = (CBA_MissionTime % _tt);
+	private _a = _t/_tt*4-1;
+	private _direction = 1;
+	if (_a > 1) then {
+		_a = 3-_a;
+		_direction = -1;
+	};
+	private _center = getMarkerPos "center";
+	private _r = 1100;
+	private _pos = [_center select 0, (_center select 1) + _a * _r, 0];
+	_ship setPosASL _pos;
+	private _xyaw = 1 * sin (_a * 40) - 1;
+	private _xpitch = 1 * sin (_a * 30) - 0.5;
+	private _xbank = 4 * sin (_a * 50) - 1.5;
+	if (true) then { // true to disable ship rolling
+		_xyaw = 0;
+		_xpitch = 0;
+		_xbank = 0;
+	};
+	private _speed = 4 * _r / _tt; // speed in m/s
+	private _velocity = [0, _direction*_speed, 0];
+	[_ship, _velocity, [_xyaw, _xpitch, _xbank]] call bso_update_pos;
+
+	[_ship, _rel_pos] call movement_on_ship;
 };
 
 bso_carrier_pfh =
@@ -60,11 +91,16 @@ bso_carrier_pfh =
 	private _velocity = [-_speed * sin _a, _speed * cos _a, 0];
 	[_ship, _velocity, [180-_a+_xyaw, _xpitch, _xbank]] call bso_update_pos;
 
+	[_ship, _rel_pos] call movement_on_ship;
+};
+
+movement_on_ship = {
+	params ["_ship", "_last_rel_pos"];
 	if (vehicle player == player) then {
 		// TODO: do some check if actually on the boat
 		if (player distance _ship < 400) then // && isTouchingGround vehicle player) then
 		{
-			player setPosASL (_ship modelToWorldVisualWorld _rel_pos);
+			player setPosASL (_ship modelToWorldVisualWorld _last_rel_pos);
 			(player) setDir (_rel_dir + getDir _ship);
 			player setVelocity [0,0,-0.4];
 		};
