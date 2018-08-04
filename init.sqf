@@ -7,7 +7,9 @@ bso_epe_parts = [];
 	{
 		bso_epe_parts pushBack (_x select 0);
 	} forEach (_vehicle getVariable ["bis_carrierParts", []]);
-} forEach [destroyer, carrier, carrier_straight];
+} forEach [destroyer, carrier, carrier_straight, destroyer_free];
+
+update_pos_w_guns = compile preprocessFileLineNumbers "update_pos_w_guns.sqf";
 
 bso_update_pos = {
 	params ["_carrierBase", "_velocity", "_rotation"];
@@ -44,7 +46,7 @@ straight_carrier_pfh = {
 	private _a = _t/_tt*4-1;
 	private _direction = 1;
 	if (_a > 1) then {
-		_a = 3-_a;
+		_a = 2-_a;
 		_direction = -1;
 	};
 	private _center = getMarkerPos "center";
@@ -93,6 +95,10 @@ bso_carrier_pfh =
 
 	[_ship, _rel_pos] call movement_on_ship;
 };
+
+[] call compile preprocessFileLineNumbers "init_freedriving.sqf";
+ships_free_driving = compile preprocessFileLineNumbers "freedriving.sqf";
+[{_this call ships_free_driving}] call CBA_fnc_addPerFrameHandler;
 
 movement_on_ship = {
 	params ["_ship", "_last_rel_pos"];

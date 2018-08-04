@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=79;
+		nextID=130;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14492.855,280.63461,15664.469};
-		dir[]={0.93496054,-0.35485333,0.013007168};
-		up[]={0.35491881,0.93487436,0.0049406923};
-		aside[]={0.013910181,1.0238282e-006,-1.0000069};
+		pos[]={15031.487,84.203453,15504.467};
+		dir[]={0.38618657,-0.68519545,0.61762851};
+		up[]={0.36327672,0.72833902,0.58099127};
+		aside[]={0.84793717,-1.4959369e-008,-0.53019148};
 	};
 };
 binarizationWanted=0;
@@ -29,6 +29,11 @@ addons[]=
 	"A3_Boat_F_Jets_Carrier_01",
 	"A3_Boat_F_Destroyer_Destroyer_01",
 	"A3_Characters_F_Jets",
+	"A3_Weapons_F_Pistols_P07",
+	"A3_Weapons_F",
+	"A3_Drones_F_Weapons_F_Gamma_Items",
+	"A3_Characters_F",
+	"A3_Weapons_F_Items",
 	"A3_Air_F_Jets_Plane_Fighter_01",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Air_F_Heli_Light_01",
@@ -38,7 +43,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -69,33 +74,47 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="A3_Air_F_Jets";
-			name="Arma 3 Jets - Aircraft";
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item5
-		{
-			className="A3_Air_F_Beta";
-			name="Arma 3 Beta - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item6
-		{
-			className="A3_Air_F";
-			name="Arma 3 Alpha - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item7
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item6
+		{
+			className="A3_Drones_F";
+			name="Arma 3 Beta - Drones";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="A3_Air_F_Jets";
+			name="Arma 3 Jets - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 		class Item8
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
 		{
 			className="A3_Structures_F_EPC";
 			name="Arma 3 Win Episode - Buildings and Structures";
@@ -133,7 +152,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			dataType="Marker";
@@ -229,13 +248,66 @@ class Mission
 					class PositionInfo
 					{
 						position[]={15111.704,20.693165,15622.867};
-						angles[]={-0,4.6021929,0};
+						angles[]={0,4.6021929,0};
 					};
 					side="West";
 					flags=6;
 					class Attributes
 					{
 						isPlayer=1;
+						class Inventory
+						{
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class uniform
+							{
+								typeName="U_B_PilotCoveralls";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="16Rnd_9x21_Mag";
+										count=3;
+										ammoLeft=17;
+									};
+									class Item1
+									{
+										name="SmokeShellOrange";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="Chemlight_green";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							gps="B_UavTerminal";
+							headgear="H_PilotHelmetFighter_B";
+						};
 					};
 					id=63;
 					type="B_Fighter_Pilot_F";
@@ -269,7 +341,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={15104.521,22.790068,15605.013};
-				angles[]={-0,0.73128182,0};
+				angles[]={0,0.73128182,0};
 			};
 			side="Empty";
 			class Attributes
@@ -285,7 +357,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={15100.406,22.4596,15617.617};
-				angles[]={-0,0.73014438,0};
+				angles[]={0,0.73014438,0};
 			};
 			side="Empty";
 			flags=4;
@@ -374,6 +446,23 @@ class Mission
 			id=78;
 			type="Land_Carrier_01_base_F";
 			atlOffset=20.777;
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14721.834,-5.9406562,15609.828};
+				angles[]={0,6.1593542,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="destroyer_free";
+			};
+			id=79;
+			type="Land_Destroyer_01_base_F";
+			atlOffset=1.4029999;
 		};
 	};
 };

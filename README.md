@@ -10,3 +10,11 @@ Stuff to implement:
 - Transitions from helicopter landing/takeoff to storage + crew moving around
 - Controlling the ship (manual / waypoints)
 - sound / particle effects
+
+
+TODO:
+- improve detection whether player is on a ship / which ship
+- control action only when on the ship
+- refactor: CfgFunctions
+- refactor: functions more generic / architecture restructure
+- improve ship physics model
