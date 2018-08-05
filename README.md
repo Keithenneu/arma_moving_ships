@@ -13,8 +13,8 @@ Stuff to implement:
 
 
 TODO:
-- improve detection whether player is on a ship / which ship
 - control action only when on the ship
 - refactor: CfgFunctions
 - refactor: functions more generic / architecture restructure
 - improve ship physics model
+- collisin detection w/ land / other ships

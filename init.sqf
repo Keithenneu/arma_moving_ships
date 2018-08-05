@@ -5,7 +5,9 @@ bso_epe_parts = [];
 {
 	private _vehicle = _x;
 	{
-		bso_epe_parts pushBack (_x select 0);
+		private _obj = _x select 0;
+		bso_epe_parts pushBack _obj;
+		_obj setVariable ["parent_ship", _vehicle];
 	} forEach (_vehicle getVariable ["bis_carrierParts", []]);
 } forEach [destroyer, carrier, carrier_straight, destroyer_free];
 
@@ -32,10 +34,11 @@ bso_update_pos = {
 	} foreach _carrierPartsArray;
 };
 
-bso_both_ships = {
+ships_pfh_proxy = {
 	[carrier, 0] call bso_carrier_pfh;
 	[destroyer, 180] call bso_carrier_pfh;
 	[carrier_straight] call straight_carrier_pfh;
+	[destroyer_free] call ships_free_driving
 };
 
 straight_carrier_pfh = {
@@ -65,7 +68,7 @@ straight_carrier_pfh = {
 	private _velocity = [0, _direction*_speed, 0];
 	[_ship, _velocity, [_xyaw, _xpitch, _xbank]] call bso_update_pos;
 
-	[_ship, _rel_pos] call movement_on_ship;
+	_ship setVariable ["_last_rel_pos", _rel_pos];
 };
 
 bso_carrier_pfh =
@@ -93,19 +96,24 @@ bso_carrier_pfh =
 	private _velocity = [-_speed * sin _a, _speed * cos _a, 0];
 	[_ship, _velocity, [180-_a+_xyaw, _xpitch, _xbank]] call bso_update_pos;
 
-	[_ship, _rel_pos] call movement_on_ship;
+	_ship setVariable ["_last_rel_pos", _rel_pos];
 };
 
 [] call compile preprocessFileLineNumbers "init_freedriving.sqf";
 ships_free_driving = compile preprocessFileLineNumbers "freedriving.sqf";
-[{_this call ships_free_driving}] call CBA_fnc_addPerFrameHandler;
 
 movement_on_ship = {
-	params ["_ship", "_last_rel_pos"];
+	private _objs = lineIntersectsObjs [getposasl player vectoradd [0,0,0.5], getPosASL player vectoradd [0,0,-1], objNull, objNull, false, 2+4+16];
+	if (count _objs == 0) exitWith {};
+	if (count _objs > 1) then {hintSilent "multiple objects!!"};
+	private _ship = (_objs select 0) getVariable ["parent_ship", objNull];
+	if (isNull _ship) exitWith {};
+	private _last_rel_pos = _ship getVariable ["_last_rel_pos", []];
+	if (_last_rel_pos isEqualTo []) exitWith {};
 	if (vehicle player == player) then {
-		// TODO: do some check if actually on the boat
 		if (player distance _ship < 400) then // && isTouchingGround vehicle player) then
 		{
+			// TODO: some error detection. like tping more than a short distance
 			player setPosASL (_ship modelToWorldVisualWorld _last_rel_pos);
 			(player) setDir (_rel_dir + getDir _ship);
 			player setVelocity [0,0,-0.4];
@@ -124,7 +132,7 @@ movement_on_ship = {
 	};
 };
 
-[{_this call bso_both_ships}] call CBA_fnc_addPerFrameHandler;
+[{[] call ships_pfh_proxy; [] call movement_on_ship}] call CBA_fnc_addPerFrameHandler;
 
 epe_proxy = {
 	_this call epe_handler;
