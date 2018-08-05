@@ -1,4 +1,6 @@
-params ["_ship"];
+params ["_ship", "_args"];
+
+// TODO: args?
 private _rel_pos = _ship worldToModelVisual getPosASLW vehicle player;
 private _rel_dir = getDir vehicle player - getDir _ship;
 
@@ -40,7 +42,5 @@ _yaw = _yaw - _rudder * 0.1 * _dt * _engine;
 
 _ship setVariable ["velocity", _velocity];
 
-_ship setPosASL _pos;
 // just one velocity for the whole thing for now
-[_ship, _velocity, [_yaw+180, _pitch, _bank]] call update_pos_w_guns;
-_ship setVariable ["_last_rel_pos", _rel_pos];
+[_pos, _velocity, [_yaw+180, _pitch, _bank]]

@@ -3,7 +3,7 @@ TODOs top of my head
 Stuff to figure out:
 - Helicopter landing / takeoff
 - Movement on stairs / slopes
-- jets and other vehicles (catapault is just a script, that should be possible)
+- jets and other vehicles (catapult is just a script, that should be possible)
 - multiplayer: was thinking about doing all the precise position crap local to each client (have a local vehicle on each client, just synchronise high level motion)
 
 Stuff to implement:
@@ -13,8 +13,9 @@ Stuff to implement:
 
 
 TODO:
+- helicopter landing currently broken
+- stairs currently broken
 - control action only when on the ship
-- refactor: CfgFunctions
-- refactor: functions more generic / architecture restructure
+- improve tp actions
 - improve ship physics model
-- collisin detection w/ land / other ships
+- collision detection w/ land / other ships

@@ -11,10 +11,12 @@ respawnDelay	= 3;
 respawnDialog	= 0;
 respawnOnStart	= 0;
 
-author="Keithen";			
+author="Keithen";
 
 class Header {
 	maxPlayers = 1;
 	minPlayers = 1;
 	gameType = TEST;
 };
+
+#include "CfgFunctions.hpp"

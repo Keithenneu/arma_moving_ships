@@ -178,6 +178,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this, ships_fnc_goInCircles, [0]] call ships_fnc_initShip;}";
 				name="carrier";
 			};
 			id=1;
@@ -195,6 +196,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this, ships_fnc_goInCircles, [180]] call ships_fnc_initShip;}";
 				name="destroyer";
 			};
 			id=2;
@@ -441,6 +443,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this, ships_fnc_BackAndForth] call ships_fnc_initShip;}";
 				name="carrier_straight";
 			};
 			id=78;
@@ -458,6 +461,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this] call ships_fnc_addDestroyerWeapons; [this, ships_fnc_freeDriving] call ships_fnc_initShip;}";
 				name="destroyer_free";
 			};
 			id=79;
