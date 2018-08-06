@@ -1,7 +1,7 @@
 params ["_ship", "_args"];
 
 // TODO: args
-private _tt = 817;
+private _tt = 400;
 private _t = (CBA_MissionTime % _tt);
 private _a = _t/_tt*4-1;
 private _direction = 1;
@@ -10,7 +10,7 @@ if (_a > 1) then {
 	_direction = -1;
 };
 private _center = getMarkerPos "center";
-private _r = 1100;
+private _r = 1000;
 private _pos = [_center select 0, (_center select 1) + _a * _r, 0];
 private _xyaw = 1 * sin (_a * 40) - 1;
 private _xpitch = 1 * sin (_a * 30) - 0.5;
