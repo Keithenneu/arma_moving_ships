@@ -1,6 +1,6 @@
 params ["_helo", "_obj"];
 private _force = _this select 4;
-if (_obj in bso_epe_parts) then {
+if (_obj in ships_epe_parts) then {
 	private _force = (_this select 4) / (getMass _helo / 200); // idle force is roughly weight / 200
 	_force = (0 max _force) min 1;
 	hintSilent str _force;

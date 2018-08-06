@@ -1,7 +1,6 @@
 params ["_ship", "_args"];
 _args params ["_angle_offset"]; // TODO: more args?
 
-private _rel_dir = getDir vehicle player - getDir _ship;
 private _tt = 817;
 private _t = (CBA_MissionTime % _tt);
 private _a = _t/_tt*360+_angle_offset;

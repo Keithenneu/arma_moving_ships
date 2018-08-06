@@ -1,10 +1,6 @@
 params ["_ship", "_args"];
 
 // TODO: args?
-private _rel_pos = _ship worldToModelVisual getPosASLW vehicle player;
-private _rel_dir = getDir vehicle player - getDir _ship;
-
-
 private _pos = getPosWorld _ship;
 private _velocity = _ship getVariable ["velocity", [0,0,0]];
 private _yaw = 180 + getDir _ship;

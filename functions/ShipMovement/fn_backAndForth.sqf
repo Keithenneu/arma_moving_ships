@@ -1,7 +1,6 @@
 params ["_ship", "_args"];
 
 // TODO: args
-private _rel_pos = _ship worldToModelVisual getPosASLW vehicle player;
 private _tt = 817;
 private _t = (CBA_MissionTime % _tt);
 private _a = _t/_tt*4-1;

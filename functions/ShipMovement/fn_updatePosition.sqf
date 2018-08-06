@@ -2,9 +2,6 @@ params ["_ship", "_state"];
 _state params ["_position", "_velocity", "_rotation"];
 _rotation params ["_yaw", "_pitch", "_bank"];
 
-
-diag_log str ["ships_updateposistion", _state];
-
 _ship setPosASL _position;
 _ship setVelocity _velocity;
 private _carrierPartsArray = _ship getVariable ["bis_carrierParts", []];
