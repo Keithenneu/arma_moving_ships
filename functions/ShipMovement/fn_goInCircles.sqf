@@ -7,6 +7,7 @@ private _a = _t/_tt*360+_angle_offset;
 private _center = getMarkerPos "center";
 private _r = 1300;
 private _pos = [(_center select 0) + _r * cos _a, (_center select 1) + _r * sin _a, 0];
+// values for testing only. quite unrealistic
 private _xyaw = 1 * sin (_a * 40) - 1;
 private _xpitch = 1 * sin (_a * 30) - 0.5;
 private _xbank = 4 * sin (_a * 50) - 1.5;

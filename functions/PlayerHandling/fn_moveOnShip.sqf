@@ -13,7 +13,7 @@ if (player == vehicle player) then
 	// TODO: some error detection. like tping more than a short distance
 	player setPosASL (_ship modelToWorldVisualWorld _last_rel_pos);
 	player setDir (_last_rel_dir + getDir _ship);
-	hintSilent str velocity player;
+	//hintSilent str velocity player;
 	if (isTouchingGround player) then
 	{
 		player setVelocity [0,0,-0.4];
