@@ -131,6 +131,7 @@ _totalforces = _totalforces + _engine_force;
 // TODO: wtf did I calculate here
 // 15knots(~8m/s),500m radius(half circ. 1570m) -> 180° <=> 196s (eff= 26.4) -> X * 26.4 = 1.09° / s -> X = 0.0412
 // TODO: should it become weaker at higher speeds or smth?
+// TODO: lower min speed / introduce differential steering, to be able to maneuver at low speed.
 private _rudder_deg_per_sec = 0;
 if (abs _cur_speed > RUDDER_MIN_SPEED) then
 {
